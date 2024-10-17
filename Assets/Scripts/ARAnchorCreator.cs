@@ -5,16 +5,16 @@ using UnityEngine.InputSystem; // Import the new Input System
 using UnityEngine.XR.ARFoundation;
 
 [RequireComponent(typeof(ARRaycastManager))]
-public class ARPlacement : MonoBehaviour
+[RequireComponent(typeof(ARAnchorManager))] // Add the ARAnchorManager requirement
+public class ARAnchors : MonoBehaviour
 {
     ARRaycastManager aRRaycastManager;
+    ARAnchorManager aRAnchorManager;
+
     [SerializeField]
     private GameObject gameObjectToCreate;
-    //public Material mat;
 
     private GameObject placedObj;
-
-    public bool spamLoadsOfObjects;
 
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
@@ -22,6 +22,7 @@ public class ARPlacement : MonoBehaviour
     void Start()
     {
         aRRaycastManager = GetComponent<ARRaycastManager>();
+        aRAnchorManager = GetComponent<ARAnchorManager>();
     }
 
     // Update is called once per frame
@@ -32,37 +33,24 @@ public class ARPlacement : MonoBehaviour
             return;
         }
 
-        // Check for raycast hits with AR planes
+        // Perform a raycast from the touch position
         if (aRRaycastManager.Raycast(touchPosition, hits, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon))
         {
             var hitPose = hits[0].pose;
+            Vector3 position = hitPose.position;
+            Quaternion rotation = hitPose.rotation;
 
-            // Instantiate object at the hit pose or move the existing one. If you want to spawn multiple objects, not just one, you would replace the below if/else statement with just the line "placedobj = Instantiate...."
+  
+            // Instantiate the object at the anchor's position and parent it to the anchor
 
-            if (spamLoadsOfObjects == true)
-            {
-                placedObj = Instantiate(gameObjectToCreate, hitPose.position, hitPose.rotation);
-            }
-            else
-            {
-                if (placedObj == null)
-                {
-                    placedObj = Instantiate(gameObjectToCreate, hitPose.position, hitPose.rotation);
-               //     Material tempMat = placedObj.GetComponent<MeshRenderer>().material = new Material (mat);
-                    
-                    Debug.Log("debug created an object " + hitPose.position);
-                }
-                else
-                {
-                    placedObj.transform.position = hitPose.position;
-                    placedObj.transform.rotation = hitPose.rotation;
-                }
-            }
-           
-          
+                placedObj = Instantiate(gameObjectToCreate, position, rotation);
+              placedObj.AddComponent<ARAnchor>(); // Parent the object to the anchor
+                Debug.Log("Object placed and anchored");
+
         }
     }
 
+    // Method to get the touch position using the New Input System
     bool TryGetTouchPosition(out Vector2 touchPosition)
     {
         // Ensure we have a touchscreen and a primary touch
@@ -77,4 +65,3 @@ public class ARPlacement : MonoBehaviour
         return false;
     }
 }
-
