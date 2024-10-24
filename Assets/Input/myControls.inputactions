@@ -22,6 +22,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Accelerator",
+                    "type": "Value",
+                    "id": "23e56228-bfb4-4244-a6aa-841001bcc418",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Gyro",
+                    "type": "Value",
+                    "id": "87de7ca2-29b3-4b4d-8a64-192f934db17f",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -68,6 +86,28 @@
                     "action": "HowLong",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "562fc970-293e-480b-a43d-62d3c1000a8f",
+                    "path": "<Accelerometer>/acceleration",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerator",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a45369b6-09f9-42b8-825d-c00b0ab8fbec",
+                    "path": "<Gyroscope>/angularVelocity",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gyro",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
