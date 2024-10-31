@@ -7,6 +7,7 @@ using UnityEngine.XR.ARFoundation;
 [RequireComponent(typeof(ARRaycastManager))]
 public class ARPlacement : MonoBehaviour
 {
+    public static bool isPlaced = false;
     ARRaycastManager aRRaycastManager;
     [SerializeField]
     private GameObject gameObjectToCreate;
@@ -54,8 +55,8 @@ public class ARPlacement : MonoBehaviour
                 }
                 else
                 {
-                    placedObj.transform.position = hitPose.position;
-                    placedObj.transform.rotation = hitPose.rotation;
+                 //   placedObj.transform.position = hitPose.position;
+                  //  placedObj.transform.rotation = hitPose.rotation;
                 }
             }
            

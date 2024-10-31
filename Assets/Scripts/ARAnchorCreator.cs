@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.InputSystem; // Import the new Input System
 using UnityEngine.XR.ARFoundation;
 
 [RequireComponent(typeof(ARRaycastManager))]
 [RequireComponent(typeof(ARAnchorManager))] // Add the ARAnchorManager requirement
+
 public class ARAnchors : MonoBehaviour
 {
     ARRaycastManager aRRaycastManager;
     ARAnchorManager aRAnchorManager;
+    
 
     [SerializeField]
     private GameObject gameObjectToCreate;
@@ -40,12 +43,14 @@ public class ARAnchors : MonoBehaviour
             Vector3 position = hitPose.position;
             Quaternion rotation = hitPose.rotation;
 
-  
+
             // Instantiate the object at the anchor's position and parent it to the anchor
 
+
                 placedObj = Instantiate(gameObjectToCreate, position, rotation);
-              placedObj.AddComponent<ARAnchor>(); // Parent the object to the anchor
+                placedObj.AddComponent<ARAnchor>(); // Parent the object to the anchor
                 Debug.Log("Object placed and anchored");
+
 
         }
     }
