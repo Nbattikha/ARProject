@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641de66687ef2444ea8831b20e585dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameObjectToCreate: {fileID: 2030009638538780955, guid: 4e948e63e2b4a2145a1937e77f655000,
+  gameObjectToCreate: {fileID: 2030009638538780955, guid: 23f5f7bd5d47cb5489a8cea37dbf2e5d,
     type: 3}
   spamLoadsOfObjects: 0
 --- !u!114 &861401115

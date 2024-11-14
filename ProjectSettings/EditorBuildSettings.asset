@@ -17,8 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: d8ce069fe810e6747b685a6e6fc597f0
-  - enabled: 1
-    path: Assets/Scenes/ARColourtest.unity
+  - enabled: 0
+    path: Assets/Scenes/Redudent/ARColourtest.unity
     guid: e60d851394ec7514d85fd2834c6c667e
   - enabled: 0
     path: Assets/Scenes/Redudent/ARAnchors.unity
@@ -26,9 +26,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Redudent/ARSomething.unity
     guid: 8123a8aee8c14b8468871d6796aaa0ce
+  - enabled: 0
+    path: Assets/Scenes/Redudent/ARColourtest1.unity
+    guid: 5e38bdf8e32995247ba1f37245e72fb9
+  - enabled: 1
+    path: Assets/Scenes/ARColourtest1.unity
+    guid: 1cb430b9a6f67584f8198744ecd327d1
   - enabled: 1
     path: Assets/Scenes/ARColourtest2.unity
-    guid: 1cb430b9a6f67584f8198744ecd327d1
+    guid: 367433627f81e474294f66873c803cad
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,
       type: 2}
