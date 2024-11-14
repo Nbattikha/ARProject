@@ -6,23 +6,29 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Redudent/SampleScene.unity
     guid: 4755b35b590504809a7525fd2109c2e2
   - enabled: 0
-    path: Assets/Scenes/ARPlanes.unity
+    path: Assets/Scenes/Redudent/ARPlanes.unity
     guid: 778910bd2f84805408cec3dca89c8aaf
   - enabled: 0
-    path: Assets/Scenes/ARImages.unity
+    path: Assets/Scenes/Redudent/ARImages.unity
     guid: 3d61542acebbcc44299276d0177763f6
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: d8ce069fe810e6747b685a6e6fc597f0
   - enabled: 1
     path: Assets/Scenes/ARColourtest.unity
     guid: e60d851394ec7514d85fd2834c6c667e
   - enabled: 0
-    path: Assets/Scenes/ARAnchors.unity
+    path: Assets/Scenes/Redudent/ARAnchors.unity
     guid: 481094712fa47ea428c6951a536a3368
   - enabled: 0
-    path: Assets/Scenes/ARSomething.unity
+    path: Assets/Scenes/Redudent/ARSomething.unity
     guid: 8123a8aee8c14b8468871d6796aaa0ce
+  - enabled: 1
+    path: Assets/Scenes/ARColourtest2.unity
+    guid: 1cb430b9a6f67584f8198744ecd327d1
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6ee72d15cf39dd748a13eac57397b9af,
       type: 2}

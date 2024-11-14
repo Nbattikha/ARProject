@@ -36,7 +36,7 @@
                     "name": "Gyro",
                     "type": "Value",
                     "id": "87de7ca2-29b3-4b4d-8a64-192f934db17f",
-                    "expectedControlType": "Vector3",
+                    "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
